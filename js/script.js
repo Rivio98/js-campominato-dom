@@ -20,7 +20,18 @@ function createSingleSquare(num) {
     return square;
 }
 
+//funzione per generare la posizione delle bombe
 
+function generateBombs(square) {
+    bomb = [];
+    for (let i = 0; i < 16; i++) {//numero fisse di mine
+        let position;
+        do {
+            position = Math.floor(Math.random() * square);//faccio in modo che in base agli square, le bombe vengano distribuite per un numero massimo di 16 sulla grid senza che si possa ripetere la posizione di ogni bomba 
+        } while (bomb.includes(position));
+        bomb.push(position);
+    }
+}
 
 //creao una variabile globale (array) per contenere le bombe
 let bomb = [];
