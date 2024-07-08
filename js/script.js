@@ -1,3 +1,6 @@
+
+//------FUNZIONI------//
+
 //Creo una funzione per mettere dentro la grid un quadrato
 function createSingleSquare(num) {
     //creo il quadrato come div
@@ -16,6 +19,13 @@ function createSingleSquare(num) {
     //restituisco il quadrato
     return square;
 }
+
+
+
+//creao una variabile globale (array) per contenere le bombe
+let bomb = [];
+
+
 
 //Recupero il pulsante dall HTML
 const button = document.getElementsByName('play');
