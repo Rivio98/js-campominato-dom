@@ -27,6 +27,11 @@ function generateBombs(max) {
 }
 //funzione per generare una nuova partita
 function newGame() {
+    //creo un array contenente le bombe
+    let bombs = [];
+
+    //creo variabile per il punteggio
+    let score = 0;
     grid.innerHTML = '';
 }
 
