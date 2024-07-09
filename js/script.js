@@ -34,45 +34,22 @@ function generateBombsArray(nums, NUM_BOMBS) {
     let bombsArray = [];
 
     //variabile di controllo per ciclo while
-    let control = false;
+    let check = false;
     //ciclo while per generare le bombe
     while (bombsArray.length < NUM_BOMBS) {
         //genero il numero random
         let num = generateBombsNumber(nums);
 
         //controllo se il numero è gia in bombsArray
-        if (!bombsArray.includes(num)) {
+        if (bombsArray.includes(num) === false) {
             //se non è presente lo pusho
             bombsArray.push(num);
-            let control = true;
+            let check = true;
         }
     }
-
+    return bombsArray;
 }
-//funzione per generare una nuova partita
-function newGame() {
 
-    //creo variabile per il punteggio
-    let score = 0;
-
-
-    //creao una variabile per stabilire se la partita è finita 
-    let gameOver = false;
-
-    //definizione costante che inidca il numero bombe array
-    const NUM_BOMBS = 16;
-
-    //svuoto la griglia
-    grid.innerHTML = '';
-
-    //creo un array contenente le bombe
-    const bombs = generateBombsArray(100, NUM_BOMBS);
-
-    //genero bombe e inserisco nell'array
-    for (let i = 0; i < NUM_BOMBS; i++) {
-
-    }
-}
 
 
 //Recupero il pulsante dall HTML
@@ -93,7 +70,16 @@ play.addEventListener('click', function () {
         //aggiungo la casella alla griglia
         grid.append(item);
     }
+
+    //definizione costante che inidca il numero bombe array
+    const NUM_BOMBS = 16;
+
+    const button = document.getElementsByName('play');
+    //creo un array contenente le bombe
+    const bombs = generateBombsArray(100, NUM_BOMBS);
+    console.log(bombs);
 });
+
 
 
 
