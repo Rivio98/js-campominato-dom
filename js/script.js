@@ -32,12 +32,11 @@ function newGame() {
 
     //creo variabile per il punteggio
     let score = 0;
-<<<<<<< HEAD
+
 
     //creao una variabile per stabilire se la partita è finita 
     let gameOver = false;
-=======
->>>>>>> 8099535671ebd20435aa1b6987777a77077825d0
+
     grid.innerHTML = '';
 }
 
