@@ -22,20 +22,13 @@ function createSingleSquare(num) {
 
 //funzione per generare la posizione delle bombe
 
-function generateBombs(square) {
-    bomb = [];
-    for (let i = 0; i < 16; i++) {//numero fisse di mine
-        let position;
-        do {
-            position = Math.floor(Math.random() * square);//faccio in modo che in base agli square, le bombe vengano distribuite per un numero massimo di 16 sulla grid senza che si possa ripetere la posizione di ogni bomba 
-        } while (bomb.includes(position));
-        bomb.push(position);
-    }
+function generateBombs(max) {
+    return Math.floor(Math.random() * max + 1);
 }
-
-//creao una variabile globale (array) per contenere le bombe
-let bomb = [];
-
+//funzione per generare una nuova partita
+function newGame() {
+    grid.innerHTML = '';
+}
 
 
 //Recupero il pulsante dall HTML
